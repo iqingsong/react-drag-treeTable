@@ -1,0 +1,127 @@
+.drop-item{
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  /* align-items: center; */
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.tooltip{
+  padding: 4px 10px;
+  font-size: 18px;
+  /* color: #1890ff; */
+  /* background-color: #fff; */
+}
+.drop-item-tooltip{
+  pointer-events: none;
+  top:0;
+  width: 100%;
+  transform: translateY(-100%);
+  position: absolute;
+  opacity: 0;
+}
+.drop-main.hover>.drop-item-tooltip{
+  opacity: 1;
+}
+.drop-main.hover{
+  background-color: #ebfeff;
+}
+.drop-main{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.drop-main.grab{
+  cursor: grab;
+}
+.move-icon{
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  opacity: 0.1;
+  /* padding: 0 4px; */
+  margin-right: 4px;
+  user-select: none;
+  user-drag: none;
+}
+.expand-icon{
+  padding: 0 10px;
+  cursor: pointer;
+}
+.drop-main.hover>.move-icon{
+  opacity: 1;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  /* padding: 30px 0 30px 30px; */
+  /* background-color:darkorange; */
+}
+.item.hover{
+  background-color: #ebfeff;
+}
+/* FIXME: 临时测试样式 */
+.item .container{
+  /* width: 240px; */
+  /* height: 30px; */
+  /* border: 1px dotted #1890ff; */
+  text-align: center;
+}
+.item .head>.brackets{
+  height: 100%;
+  width: 10px;
+  margin-left: -4px;
+  border-left: 2px solid #eee;
+  border-top: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+.item .head{
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #666; */
+}
+.item .move:hover{
+  cursor: grab;
+}
+.toolbar{
+  min-width: 200px;
+  cursor: pointer;
+  /* pointer-events: none; */
+  opacity: 0;
+  border:1px solid transparent;
+  width: 100%;
+  text-align: center;
+  border:1px solid #1890ff;
+}
+.toolbar.droppable{
+  /* pointer-events: auto; */
+}
+.drop-item.grab>.toolbar.droppable{
+  transition: opacity 0.3s;
+  opacity: 0.1;
+}
+.item .toolbar:hover,.item .toolbar.hover.droppable{
+  opacity: 1;
+}
+.item .children{
+  /* background-color: #eee; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.container-row{
+  padding: 2px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container-row.hover{
+  background-color: #ebfeff;
+}
+.drop-item .toolbar:hover{
+  opacity: 1;
+}

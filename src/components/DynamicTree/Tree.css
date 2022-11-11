@@ -1,0 +1,10 @@
+.tree{
+  position: relative;
+}
+.tree>.moving{
+  position: absolute;
+  opacity: 0.5;
+  border: 1px solid red;
+  pointer-events: none;
+  background-color: #fff;
+}
