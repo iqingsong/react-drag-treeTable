@@ -12,7 +12,7 @@ const DEFAULT_DROPDATA = {
   hoverPosition: [],
 }
 const Tree = (props) => {
-  const { defaultData = DEFAULT_ITEM_ROOT_DATA, disabled } = props
+  const { defaultData = DEFAULT_ITEM_ROOT_DATA, disabled, onchange } = props
   const ref = useRef(null)
   // const mouse = useMouse(ref.current)
   const [treeData, setTreeData] = useState(defaultData)
@@ -24,6 +24,7 @@ const Tree = (props) => {
 
   const update = (data) => {
     setTreeData(data)
+    onchange(data)
   }
 
   const onMouseUp = () => {
