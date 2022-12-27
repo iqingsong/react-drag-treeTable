@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Select, Input, DatePicker } from 'antd'
 import moment from 'moment'
 
@@ -110,7 +110,7 @@ const Item = (props) => {
     update({ ...data })
   }
 
-  // 右值 type
+  // 值 type
   const onChangevalueType = (val) => {
     itemData.valueType = val
     itemData._valueType = itemData.valueType
@@ -123,7 +123,7 @@ const Item = (props) => {
     }
     update({ ...data })
   }
-  // 右值 value
+  // 值 value
   const changeInputValue = async (value, titles) => {
     // console.log('changeInputValue: ', value)
     itemData.value = value
@@ -194,21 +194,21 @@ export function getSummary(data) {
 }
 
 export const DEFAULT_ITEM_ROOT_DATA = {
-  isExpand: false,
+  isExpand: true,
   children: [
     {
-      isExpand: false,
-      value: '',
-      valueMethod: '',
-      operator: '',
-      valueType: '',
-      children: [],
-      // operator: 'length less than',
-      // value: '123',
+      // isExpand: false,
+      // value: '',
       // valueMethod: '',
-      // valueType: 'NUMBER',
-      // _value: '123',
-      // _valueType: 'NUMBER',
+      // operator: '',
+      // valueType: '',
+      children: [],
+      operator: 'length less than',
+      value: '123',
+      valueMethod: '',
+      valueType: 'NUMBER',
+      _value: '123',
+      _valueType: 'NUMBER',
     },
   ],
   logic: '&&',
