@@ -18,7 +18,7 @@
 5. 一键新建分组逻辑，减少操作步骤。
 6. 增加新逻辑的按钮从尾部改到实际增加的位置，减小误操作。整体内容更加紧凑，减少空间浪费和关注点飘移。
 
-![](.\src\assets\jpg\react-tree3.jpg)
+![](https://github.com/iqingsong/react-dynamic-tree/blob/master/src/assets/jpg/react-tree3.jpg)
 
 ## 安装
 
