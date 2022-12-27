@@ -1,7 +1,7 @@
-.tree{
+.tree {
   position: relative;
 }
-.tree>.moving{
+.tree > .moving {
   position: absolute;
   opacity: 0.5;
   border: 1px solid red;

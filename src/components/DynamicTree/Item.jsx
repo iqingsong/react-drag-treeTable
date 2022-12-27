@@ -79,7 +79,7 @@ const Item = (props) => {
     itemParent = itemData
     itemData = itemData.children[position]
   })
-  
+
   useEffect(() => {
     let _paramTypes = []
     if (itemData.operator === '' || typeof itemData.operator === 'undefined') return
@@ -138,14 +138,12 @@ const Item = (props) => {
     <>
       {/* TODO: 以后在TreeItem 为Item 生成id 做key，减少react 创建dom  */}
       <div key={_itemKey} className={styles.item}>
-
         <Select onChange={changeRuleWithCleanParams} defaultValue={itemData?.operator} disabled={!isEditable} placeholder="请选择" style={{ width: 100 }}>
           {paramOptions.map((option) => (
             <Option key={option.value} value={option.value}>
               {option.title}
             </Option>
-          )
-          )}
+          ))}
         </Select>
 
         {/* 类型 */}
@@ -159,14 +157,21 @@ const Item = (props) => {
 
         {/* 字符串、数值 */}
 
-        {[Object.keys(TYPEOPTIONS)[0], Object.keys(TYPEOPTIONS)[1], '', undefined, null].includes(itemData._valueType) &&
-            <Input disabled={!isEditable} style={{ width: 120 }} type={itemData?.valueType ===  Object.keys(TYPEOPTIONS)[1] ?  Object.keys(TYPEOPTIONS)[1] : ''}
-          placeholder='请输入' defaultValue={itemData?.value} onChange={(ev) => { changeInputValue(ev.target.value) }} />}
+        {[Object.keys(TYPEOPTIONS)[0], Object.keys(TYPEOPTIONS)[1], '', undefined, null].includes(itemData._valueType) && (
+          <Input
+            disabled={!isEditable}
+            style={{ width: 120 }}
+            type={itemData?.valueType === Object.keys(TYPEOPTIONS)[1] ? Object.keys(TYPEOPTIONS)[1] : ''}
+            placeholder="请输入"
+            defaultValue={itemData?.value}
+            onChange={(ev) => {
+              changeInputValue(ev.target.value)
+            }}
+          />
+        )}
 
         {/* 日期 */}
-        {itemData._valueType === Object.keys(TYPEOPTIONS)[2] &&
-            <DatePicker disabled={!isEditable} showTime style={{ width: 120, }} value={moment(itemData.value)}
-                onChange={changeInputValue} />}
+        {itemData._valueType === Object.keys(TYPEOPTIONS)[2] && <DatePicker disabled={!isEditable} showTime style={{ width: 120 }} value={moment(itemData.value)} onChange={changeInputValue} />}
 
         {!isEditable && <Input disabled value={getValue(itemData.value)} style={{ width: 80 }} />}
       </div>
